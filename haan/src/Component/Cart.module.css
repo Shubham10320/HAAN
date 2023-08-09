@@ -1,0 +1,28 @@
+.cardDiv{
+    display:flex;
+    flex-direction: row;
+    margin: 10px 5px 5px 10px;
+}
+.cardDiv>div:last-child{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.cardDiv>div:last-child>p{
+    margin-top: -5px;
+}
+.cardDiv>div:last-child>div{
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0x 5px 10px;
+    gap:10px;
+    align-items: center;
+}
+.cardDiv>div:last-child>div>button{
+    padding: 5px 15px 5px 15px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    border: 1px solid black;
+    
+}
