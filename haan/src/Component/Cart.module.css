@@ -1,11 +1,19 @@
 .wholeCart{
-    max-width: fit-content;
-    background-color: black;
+    width: 28%;
+    background-color: black; 
     color: white;
+    padding-left: 60px;
+    /* margin-top: -22px; */
+    position: absolute;
+    top: 0;
+    right: 0;
 }
-.wholeCart>div:first-child{
-    margin-left: 10px;
+.wholeCart>div:first-child>img{
+    width: 100%;
+    height: 100%;
+    
 }
+
 .wholeCart>div:last-child{
     display: flex;
     flex-direction: row;
@@ -67,7 +75,7 @@
 /* scrolling container */
 .scrollableContainer {
     margin: 10px 10px 10px 10px;
-    max-height: 300px;
+    max-height: 480px;
     max-width: fit-content;
     overflow-y: auto; 
     scrollbar-width: auto;
@@ -77,12 +85,13 @@
   }
   
   .scrollableContainer::-webkit-scrollbar {
-    width: 4px; /* Width of the scrollbar */
+    width: 10px; /* Width of the scrollbar */
+    height: 5px;
   }
   
   .scrollableContainer::-webkit-scrollbar-thumb {
-    background-color: #ccc; /* Color of the thumb */
-    border-radius: 4px; /* Rounded corners */
+    background-color: #689f9c; /* Color of the thumb */
+    /* border-radius: 4px; Rounded corners */
   }
   
   .scrollableContainer::-webkit-scrollbar-track {

@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './Cart.module.css';
+import gstImg from '../Media/gst.png';
 
 const Cart = () => {
   const [productsData, setProductsData] = useState([]);
@@ -59,7 +60,7 @@ const Cart = () => {
   return (
     <div className={styles.wholeCart}>
       <div className={styles.initialCart}>
-        <h1>My Cart</h1>
+        <img className={styles.image} src={gstImg} alt="gst"/>
       </div>
       <div className={`${styles.mainCartDiv} ${styles.scrollableContainer}`}>
         {productsData.map((ele) => (
@@ -81,7 +82,7 @@ const Cart = () => {
         ))}
       </div>
       <div className={styles.checkoutDiv}>
-        <h1>Total : {calculateTotal()} Rs.</h1>
+        <h2>Total : {calculateTotal()} Rs.</h2>
         <button>Checkout</button>
       </div>
     </div>
