@@ -1,57 +1,91 @@
-import React from 'react'
+import React from 'react';
 import { useState, useEffect } from 'react';
-import axois from 'axios';
+import axios from 'axios';
 import styles from './Cart.module.css';
+
 const Cart = () => {
-
-  const[productsData, setProductsData] = useState([]);
-
-  const[quantity, setQuantity] = useState(1);
-
-  const getData = async() =>{
-    try{
-      let res = await axois.get(`https://haanproject.onrender.com/products`);
+  const [productsData, setProductsData] = useState([]);
+  const [quantity, setQuantity] = useState(1);
+  
+  const getData = async () => {
+    try {
+      let res = await axios.get(`https://haanproject.onrender.com/products`);
       console.log(res.data);
       setProductsData(res.data);
-    }
-    catch(error){
+    } catch (error) {
       console.log("error while fetching data");
     }
-  }
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     getData();
-  })
+  }, []);
 
-  const handleInc=()=>{
-    setQuantity(quantity+1);
-  }
-  const handleDec=()=>{
-    setQuantity(quantity-1);
+  const handleQuantityChange = (newQuantity) => {
+    if (newQuantity >= 1 && newQuantity <= 10) {
+      setQuantity(newQuantity);
+    }
+  };
+
+  const handleInc = () => {
+    handleQuantityChange(quantity + 1);
+  };
+
+  const handleDec = () => {
+    handleQuantityChange(quantity - 1);
+  };
+
+  const calculateTotal = () => {
+    const totalPrice = productsData.reduce((total, product) => {
+      return total + product.price * quantity;
+    }, 0);
+    return totalPrice;
+  };
+
+  // Sliding Function
+  const orderSummary = document.querySelector(".cardDiv");
+
+  const upScroll = () => {
+      orderSummary.scrollBy(0, -200);
   }
 
-  
+  const downScroll = () => {
+      orderSummary.scrollBy(0, 200);
+  }
+
+  window.upScroll = upScroll;
+  window.downScroll = downScroll;
+
   return (
-    <div className={styles.mainCartDiv}>
-      {productsData.map((ele)=>(
-        <div className={styles.cardDiv}>
-          <div className={styles.imgDiv}>
-            <img style={{width:'200px', height:'200px'}} src = {ele.img} alt='product'/>
-          </div>
-          <div className={styles.detailsDiv}>
-            <h1>{ele.name}</h1>
-            <p>{ele.price}</p>
+    <div className={styles.wholeCart}>
+      <div className={styles.initialCart}>
+        <h1>My Cart</h1>
+      </div>
+      <div className={`${styles.mainCartDiv} ${styles.scrollableContainer}`}>
+        {productsData.map((ele) => (
+          <div className={styles.cardDiv} key={ele.id}>
+            <div className={styles.imgDiv}>
+              <img style={{ width: '120px', height: '120px' }} src={ele.img} alt='product' />
+            </div>
+            <div className={styles.detailsDiv}>
+              <h3>{ele.name}</h3>
+              <p>{ele.price} Rs. </p>
               <div className={styles.btnDiv}>
-                <button onClick={handleDec} disabled={quantity===1}>-</button>
+                <button onClick={handleDec} disabled={quantity === 1} style={{fontSize:'larger'}}>-</button>
                 <p>{quantity}</p>
-                <button onClick={handleInc} disabled={quantity===10}>+</button>
+                <button onClick={handleInc} disabled={quantity === 10} style={{fontSize:'larger'}}>+</button>
               </div>
+              <div><hr className={styles.hrLine}/></div>
+            </div>
           </div>
-        </div>
-      ))}
-      <div><h1>Total:{0}</h1></div>
+        ))}
+      </div>
+      <div className={styles.checkoutDiv}>
+        <h1>Total : {calculateTotal()} Rs.</h1>
+        <button>Checkout</button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;
