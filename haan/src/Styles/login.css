@@ -1,0 +1,73 @@
+.login,
+.sign-up{
+    width: 50%;
+    margin: 7rem auto auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #fff;
+    padding: 5%;
+    border-radius: 1rem;
+}
+
+.login>h1,
+.sign-up>h1{
+    margin-bottom: -1rem;
+}
+
+.login>form,
+.sign-up>form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+.login >form>div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.login>form label{
+    padding: 0;
+    margin: 0;
+}
+
+.login>form input,
+.sign-up>form input{
+    height: 1.5rem;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.login>form input[type="submit"],
+.sign-up>form input[type="submit"]{
+    height: 2rem;
+    border: none;
+    width: 40%;
+    align-self: flex-end;
+    background-color: #1473e6;
+    border-radius: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login>form input[type="submit"]:hover,
+.sign-up>form input[type="submit"]:hover{
+    background-color: #0a60c9;
+}
+
+.login>div>button,
+.sign-up>div>button{
+    background-color: #fff;
+    border: none;
+    color: #1473e6;
+    font-weight: 700;
+}
+
+.login>div>button:hover,
+.sign-up>div>button:hover{
+    color: #0a60c9;
+    text-decoration: underline;
+    cursor: pointer;
+}
