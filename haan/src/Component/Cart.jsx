@@ -9,7 +9,7 @@ const Cart = () => {
 
   const [quantity, setQuantity] = useState(1);
   
-  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+  const [isOverlayOpen, setIsOverlayOpen] = useState(true);  //if you want to add button for the pop up the cart make this intital state false useState(false)
 
   const getData = async () => {
     try {
@@ -60,9 +60,9 @@ const Cart = () => {
   window.upScroll = upScroll;
   window.downScroll = downScroll;
 
-  const openNav = () => {
-    setIsOverlayOpen(true);
-  };
+  // const openNav = () => {
+  //   setIsOverlayOpen(true);
+  // };
 
   const closeNav = () => {
     setIsOverlayOpen(false);
@@ -71,7 +71,7 @@ const Cart = () => {
   return (
     <div>
       {/* Button to open the overlay */}
-      <span className={styles.openBtn} onClick={openNav}>Cart &#9776;</span>
+      {/* <span className={styles.openBtn} onClick={openNav}>Cart &#9776;</span> */}
 
       {/* Overlay */}
       {isOverlayOpen && (
