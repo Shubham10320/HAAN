@@ -1,9 +1,14 @@
 import navStyle from '../Styles/NavBar.module.css'
 import homeStyle from '../Styles/Home.module.css'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthContextApi';
+import { useContext } from 'react';
+import { useState } from 'react';
 function NavBar() {
 
-
+  const { authState, logout } = useContext(AuthContext);
+  const [popup, setPopup] = useState(false);
+  
    
     
   return (
@@ -20,9 +25,18 @@ function NavBar() {
 
 
       <header>
+        {popup?<div className='popup'>
+          <h2>{authState.name}</h2>
+          <button style={{ backgroundColor: "black", color: "#fff", border: "none" }}
+            onClick={() => { setPopup(!popup); logout()}}
+          >Log Out</button>
+        </div>:<></>}
         <div className={navStyle.account}>
           {/* <a href="#"> <span class="material-symbols-outlined">person </span> </a> */}
-          <Link to={'/login'} ><span className="material-symbols-outlined">person</span></Link>
+          {authState.isAuth ? <button style={{ backgroundColor: "black", color: "#fff", border: "none" }}
+          onClick={() =>setPopup(!popup)} className="material-symbols-outlined"
+          >person</button>
+          : <Link to={'/login'} ><span className="material-symbols-outlined">person</span></Link>}
         </div>
 
         <div className={navStyle.logo}>

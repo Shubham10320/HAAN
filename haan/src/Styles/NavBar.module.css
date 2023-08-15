@@ -170,7 +170,11 @@ header {
 }
 
 
-
+.popup{
+  position: relative;
+  top: 3rem;
+  max-width: 2rem;
+}
 
 
 
@@ -231,3 +235,4 @@ header {
   }
 
 }
+

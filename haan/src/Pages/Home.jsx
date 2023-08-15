@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import NavBar from "../Component/NavBar";
 import homeStyle from "../Styles/Home.module.css";
-import Footer from "../Component/Footer";
 
 const Home = () => {
   // let arr=['../Media/HAAN-img/c2.jpg','../Media/HAAN-img/c3.jpg','../Media/HAAN-img/c4.jpg','../Media/HAAN-img/c5.jpg']
@@ -32,7 +30,7 @@ const Home = () => {
 
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
 
       <section>
         <div className={homeStyle.circle}></div>
@@ -150,7 +148,7 @@ const Home = () => {
 
     </div>
   </div>
-  <Footer/>
+  {/* <Footer/> */}
   </div>
   );
 };
