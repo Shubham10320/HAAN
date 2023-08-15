@@ -9,9 +9,9 @@ const AllRoutes = () => {
       <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/login' element={<Authentication />}></Route>
-          <Route path='/register' element={<SignUp />}></Route>
+          <Route path='/register' element={<SignUp/>}></Route>
       </Routes>
   )
 }
 
-export default AllRoutes
+export default AllRoutes;
