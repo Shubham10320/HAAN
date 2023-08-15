@@ -50,6 +50,9 @@ const Home = () => {
         </div>
       </section>
 
+
+
+
       <div className={homeStyle.msg}>
         <p>
           <strong>
