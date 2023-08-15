@@ -1,7 +1,7 @@
 .closeBtn {
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 50px;
     /* color: white; */
     color: black;
     cursor: pointer;
@@ -9,6 +9,7 @@
     position: absolute;
     top: 5px;
     left: 67%;
+    font-weight: bold;
     /* width: 100%; */
     /* z-index: 2; Make sure it's above other content */
 }
@@ -94,6 +95,8 @@
 .cardDiv>div:last-child>p{
     margin-top: -5px;
 }
+
+
 .cardDiv>div:last-child>div{
     display: flex;
     flex-direction: row;
@@ -110,6 +113,18 @@
     
 }
 
+.cardDiv>div:last-child>div>button:last-child{
+    padding: 9px 15px 9px 15px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    border: 1px solid black;
+    width: max-content;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
 .hrLine{
     color: white;
     width:100%;
@@ -120,7 +135,7 @@
 /* scrolling container */
 .scrollableContainer {
     margin: 10px 10px 10px 10px;
-    max-height: 480px;
+    max-height: 580px;
     max-width: fit-content;
     overflow-y: auto; 
     scrollbar-width: auto;
