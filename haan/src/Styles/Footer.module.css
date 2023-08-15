@@ -710,6 +710,7 @@ color: rgb(255, 255, 255);
     flex-direction: column;
     width: 100%;
     margin: auto;
+    
   }
   #first div {
     display: flex;
