@@ -137,7 +137,7 @@ const Payment = () => {
                                 <img style={{width:'120px', height:'120px', borderRadius:'10px'}} src={ele.img} alt={ele.title}/>
                                 <h2>{ele.name}</h2>
                             </div>
-                            <p>{ele.price} ₹</p>
+                            <p>{ele.price} Rs.</p>
                         </div>
                     ))}
                 </div>
@@ -145,19 +145,19 @@ const Payment = () => {
                 <div className={styles.paymentSummaryDetailsDiv}>
                     <div className={styles.subtotal}>
                         <h3>Subtotal : </h3>
-                        <p>{calculateSubtotal()} ₹</p>
+                        <p>{calculateSubtotal()} Rs.</p>
                     </div>
                     <div className={styles.shipping}>
                         <h3>Shipping : </h3>
-                        <p>+250 ₹</p>
+                        <p>+250 Rs.</p>
                     </div>
                     <div className={styles.discount}>
                         <h3>Discount : </h3>
-                        <p>-1000 ₹</p>
+                        <p>-1000 Rs.</p>
                     </div>
                     <div className={styles.total}>
                         <h3>Total : </h3>
-                        <p>{calculateTotal()} ₹</p>
+                        <p>{calculateTotal()} Rs.</p>
                     </div>
 
                 </div>
@@ -174,18 +174,18 @@ const Payment = () => {
             {otpPage ? (
                     <div className={styles.otpPageDiv}>
                         <p>Enter OTP</p>
-                        <input maxLength={4} placeholder='____'/>
+                        <input maxLength={4} placeholder='OTP'/>
                         <p>Resend OTP</p>
                     </div>
             ) : (
             <div className={styles.paymentPageDivMainContent}>
                 <div>
                     <p>Card Number</p>
-                    <input placeholder='Enter your card number'/>
+                    <input maxLength={16} placeholder='Enter your card number'/>
                 </div>
                 <div>
                     <p>Expiry</p>
-                    <input placeholder='MM / YY'/>
+                    <input maxLength={5} placeholder='MM / YY'/>
                 </div>
                 <div>
                     <p>Card Holder's name</p>
@@ -193,7 +193,7 @@ const Payment = () => {
                 </div>
                 <div>
                     <p>CVV</p>
-                    <input placeholder='CVV'/>
+                    <input maxLength={3} placeholder='CVV'/>
                 </div>
                 <div>
                     <input type="checkbox" id="save-card" value="Save card securely for future payments" />
@@ -208,7 +208,7 @@ const Payment = () => {
             ) :(
                 <div className={styles.paymentPageDivSubtotalAndSubmit}>
                     <div>
-                        <p>₹ {calculateTotal()}</p>
+                        <p>Rs. {calculateTotal()}</p>
                         <p style={{color:'grey'}}>View Details</p>
                     </div>
                     <button onClick={redirectToOtp}>Pay Now</button>
