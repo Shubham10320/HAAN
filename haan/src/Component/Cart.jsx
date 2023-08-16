@@ -84,11 +84,11 @@ const Cart = () => {
                       <img style={{ width: '120px', height: '120px' }} src={ele.img} alt='product' />
                     </div>
                     <div className={styles.detailsDiv}>
-                        <h3>{ele.name}</h3>
+                        <h4>{ele.name}</h4>
                       <p>{ele.price} Rs. </p>
                       <div className={styles.btnDiv}>
                         <button onClick={() => handleDec(ele.id)} style={{fontSize:'larger'}}>-</button>
-                        <p>{quantities[ele.id]}</p>
+                        <p style={{marginBottom:'0'}}>{quantities[ele.id]}</p>
                         <button onClick={() => handleInc(ele.id)} disabled={quantities[ele.id] === 10} style={{fontSize:'larger'}}>+</button>
                         <button onClick={() => handleDelete(ele.id)}>Delete</button>
                       </div>
@@ -101,8 +101,8 @@ const Cart = () => {
                 ))}
               </div>
               <div className={styles.checkoutDiv}>
-                <h2>Total : {calculateTotal()} Rs.</h2>
-                <button>Checkout</button>
+                <h4>Total : {calculateTotal()} Rs.</h4>
+                <button id='checkoutBtn'>Checkout</button>
               </div>
             </div>
           </div>
