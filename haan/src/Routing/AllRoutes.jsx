@@ -6,17 +6,22 @@ import SignUp from '../Component/SignUp';
 import Product from '../Component/Product';
 import SingleProduct from '../Component/SingleProduct';
 import Wishlist from '../Component/Wishlist';
+import Cart from '../Component/Cart';
+import Payment from '../Component/Payment';
 
 const AllRoutes = () => {
   return (
       <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/login' element={<Authentication />}></Route>
-          {/* <Route path='/register' element={<SignUp />}></Route> */}
+          <Route path='/payment' element={<Payment />}></Route>
+          <Route path='/cart' element={<Cart />}></Route>
           <Route path='/product' element={<Product />}></Route>
           <Route path='/product/:id' element={<SingleProduct />}></Route>
-          {/* <Route path='/wishlist' element={<Wishlist />}></Route> */}
+          <Route path='/wishlist' element={<Wishlist />}></Route>
+
           
+
       </Routes>
   )
 }

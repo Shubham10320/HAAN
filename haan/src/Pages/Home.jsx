@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import homeStyle from "../Styles/Home.module.css";
+import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
 
 const Home = () => {
   // let arr=['../Media/HAAN-img/c2.jpg','../Media/HAAN-img/c3.jpg','../Media/HAAN-img/c4.jpg','../Media/HAAN-img/c5.jpg']
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
 
   // const[slider, setSlider]=useState(arr);
@@ -14,6 +17,19 @@ const Home = () => {
       .then((res) => setData(res))
       .catch((ans) => console.log(ans));
   }, []);
+
+  async function postData(elem) {
+    const {img,name,discounted_price,price,pack,description,category}=elem
+   
+    try {
+      await axios.post("https://haanproject.onrender.com/cartData",{
+        img,name,discounted_price,price,pack,description,category})
+      
+    } catch (error) {
+      console.log(error);
+    }
+    
+  }
 
   // useEffect(()=>{
   // let i = 0;
@@ -70,9 +86,9 @@ const Home = () => {
       <div className={homeStyle.productCard}>
         {data?.map((elem, idx) => {
           return (
-            <div key={idx} className={homeStyle.cardChild}>
+            <div key={idx} className={homeStyle.cardChild} >
               <div>
-                <img src={elem.img} alt={elem.name} />
+                <img src={elem.img} alt={elem.name} onClick={navigate(`/product/${idx}`)}/>
               </div>
               <div className={homeStyle.cardDetails}>
                 <h3>{elem.name}</h3>
@@ -81,7 +97,7 @@ const Home = () => {
                   <span>Rs.{elem.price}</span>
                 </p>
               </div>
-              <button>Add-Cart</button>
+              <button onClick={()=>postData(elem)}>Add-Cart</button>
             </div>
           );
         })}
