@@ -100,9 +100,9 @@ const Login = () => {
         <hr />
       </div>
       <div className="icons">
-        <a className="fa fa-google "></a>
-        <a className="fa fa-facebook"></a>
-        <a className="fa fa-twitter"></a>
+        <a className="fa fa-google  "href="#"></a>
+        <a className="fa fa-facebook" href="#"></a>
+        <a className="fa fa-twitter" href="#"></a>
       </div>
     </div>
   );

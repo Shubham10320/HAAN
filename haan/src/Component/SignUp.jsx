@@ -24,7 +24,8 @@ const SignUp = () => {
               .then((res) => {
                 console.log(res);
                 setError("User Registered Successfully");
-                navigate(`/auth/login`);
+                // navigate(`/login`);
+                setAuthState({ ...authState, register: false });
               })
               .catch((error) => {
                 console.error("Error sending data:", error);
@@ -98,9 +99,9 @@ const SignUp = () => {
         <hr />
       </div>
       <div className="icons">
-        <a className="fa fa-google "></a>
-        <a className="fa fa-facebook"></a>
-        <a className="fa fa-twitter"></a>
+        <a className="fa fa-google " href="#"></a>
+        <a className="fa fa-facebook" href="#"></a>
+        <a className="fa fa-twitter" href="#"></a>
       </div>
     </div>
   );

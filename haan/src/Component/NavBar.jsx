@@ -26,16 +26,16 @@ function NavBar() {
 
       <header>
         {popup?<div className='popup'>
-          <h2>{authState.name}</h2>
           <button style={{ backgroundColor: "black", color: "#fff", border: "none" }}
             onClick={() => { setPopup(!popup); logout()}}
-          >Log Out</button>
+          ><i class="fa fa-sign-out" aria-hidden="true"></i>
+          </button>
         </div>:<></>}
         <div className={navStyle.account}>
           {/* <a href="#"> <span class="material-symbols-outlined">person </span> </a> */}
           {authState.isAuth ? <button style={{ backgroundColor: "black", color: "#fff", border: "none" }}
-          onClick={() =>setPopup(!popup)} className="material-symbols-outlined"
-          >person</button>
+          onClick={() =>setPopup(!popup)}
+          ><h2>{authState.name}</h2></button>
           : <Link to={'/login'} ><span className="material-symbols-outlined">person</span></Link>}
         </div>
 
