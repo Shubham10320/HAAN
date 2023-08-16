@@ -97,7 +97,7 @@ const Home = () => {
                   <span>Rs.{elem.price}</span>
                 </p>
               </div>
-              <button onClick={()=>postData(elem)}>Add-Cart</button>
+              <button >Add-Cart</button>
             </div>
           );
         })}
