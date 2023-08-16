@@ -80,6 +80,7 @@ const Login = () => {
             type="email"
             placeholder="Enter Your Email address"
             onChange={(e) => handleMail(e)}
+            required
           />
         </div>
         <div>
@@ -88,6 +89,7 @@ const Login = () => {
             type="password"
             placeholder="Enter Your Password"
             onChange={(e) => handlePass(e)}
+            required
           />
         </div>
         <input type="submit" value="Submit" />
