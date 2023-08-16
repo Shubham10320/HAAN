@@ -83,7 +83,7 @@ const Home = () => {
                   <span>Rs.{elem.price}</span>
                 </p>
               </div>
-              <button>Add-Cart</button>
+              <button >Add-Cart</button>
             </div>
           );
         })}
