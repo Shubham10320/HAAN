@@ -6,6 +6,7 @@ import SignUp from '../Component/SignUp';
 import Product from '../Component/Product';
 import SingleProduct from '../Component/SingleProduct';
 import Wishlist from '../Component/Wishlist';
+import Payment from '../Component/Payment';
 
 const AllRoutes = () => {
   return (
@@ -15,7 +16,7 @@ const AllRoutes = () => {
           {/* <Route path='/register' element={<SignUp />}></Route> */}
           <Route path='/product' element={<Product />}></Route>
           <Route path='/product/:id' element={<SingleProduct />}></Route>
-          {/* <Route path='/wishlist' element={<Wishlist />}></Route> */}
+          <Route path='/payment' element={<Payment />}></Route>
           
       </Routes>
   )
