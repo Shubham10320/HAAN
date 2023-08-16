@@ -88,8 +88,8 @@
 
 .login .fa,
 .sign-up .fa {
-  padding: 20px;
-  font-size: 25px;
+  padding: 13px;
+  font-size: 22px;
   /* width: 30px; */
   /* height: 30px; */
   text-align: center;
@@ -130,7 +130,10 @@
 .login .icons,
 .sign-up .icons {
     display: flex; 
-    justify-content: space-between;
+    justify-content: center;
+    gap:20px;
+    /* width: 40px;
+    height: 40px; */
 }
 
 @media screen and (max-width: 700px) {

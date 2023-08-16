@@ -49,12 +49,13 @@ function NavBar() {
         <nav className={navStyle.nav}  id="shubhMenu">
           <ion-icon name="close" className={navStyle.header_close} style={{display:"none"}} id="close-menu"></ion-icon>
           <ul className={navStyle.nav_list}>
-            <li className={navStyle.nav_item}> <a href="#" className={navStyle.nav_link}>Shop</a> </li>
-            <li className={navStyle.nav_item}> <a href="#" className={navStyle.nav_link}> Collection </a></li>
-            <li className={navStyle.nav_item}> <a href="#" className={navStyle.nav_link}> About Us </a></li>
-            <li className={navStyle.nav_item}> <a href="" className={navStyle.nav_link}> Sobremesa Talks </a></li>
-            <li className={navStyle.nav_item}><a href="" className={navStyle.nav_link}> Refill Station </a></li>
+            <li className={navStyle.nav_item}><Link to={'/product'} className={navStyle.nav_link}>Shop </Link> </li>
+            <li className={navStyle.nav_item}><Link to={'#'} className={navStyle.nav_link}>Collections</Link></li>
+            <li className={navStyle.nav_item}> <Link to={'#'} className={navStyle.nav_link}>About us</Link></li>
+            <li className={navStyle.nav_item}> <Link to={'#'} className={navStyle.nav_link}>Sobremesa Talks</Link> </li>
+            <li className={navStyle.nav_item}><Link to={'#'} className={navStyle.nav_link}>Refill Station</Link> </li>
 
+            
             <h1 className={navStyle.nav_item}>
                 <a href="" className={navStyle.nav_link}> <ion-icon name="search"></ion-icon> </a>
             </h1>
@@ -65,7 +66,7 @@ function NavBar() {
 
 
             <h1 className={navStyle.nav_item}>
-              <a className={navStyle.nav_link}> <ion-icon name="cart" onclick="showhaanCart()"></ion-icon> </a>
+            <Link to={'/cart'} className={navStyle.nav_link}><ion-icon name="cart"></ion-icon></Link> 
             </h1>
 
           </ul>
