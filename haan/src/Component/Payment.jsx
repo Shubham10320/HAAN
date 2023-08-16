@@ -28,7 +28,7 @@ const Payment = () => {
 
   const fetchData = async() => {
     try{
-        let res = await axios.get(`https://haanproject.onrender.com/products`);
+        let res = await axios.get(`https://haanproject.onrender.com/cartData`);
         console.log(res.data);
         setOrderedProduct(res.data);
     }
@@ -74,14 +74,16 @@ const Payment = () => {
   };
 
   const calculateTotal=()=>{
-    return calculateSubtotal()-750;
+    return calculateSubtotal()-discount()+parseInt(250);
   }
-
+  const discount=()=>{
+    return calculateSubtotal()/parseInt(10);
+  }
 
   return (
     <>
     {thankyouPage ? (
-    <div className={styles.thankyouPage} style={{textAlign:'center', marginTop:'100px'}}>
+    <div className={styles.thankyouPage} style={{textAlign:'center', marginTop:'50px'}}>
         <img src={thankyouPic} alt="thankyou"/>
         <p><span style={{fontWeight:'bold'}}>Order ID</span> : HAAN0034546435345</p>
         <button className={styles.continueShoppingBtn}>Continue Shopping</button>
@@ -153,7 +155,7 @@ const Payment = () => {
                     </div>
                     <div className={styles.discount}>
                         <h3>Discount : </h3>
-                        <p>-1000 Rs.</p>
+                        <p>-{discount()} Rs.</p>
                     </div>
                     <div className={styles.total}>
                         <h3>Total : </h3>

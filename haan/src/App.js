@@ -1,11 +1,15 @@
 import './App.css';
-// import AllRoutes from './Routing/AllRoutes';
-import Payment from './Component/Payment';
+import Footer from './Component/Footer';
+import NavBar from './Component/NavBar';
+import homeStyle from "./Styles/Home.module.css";
+import AllRoutes from './Routing/AllRoutes';
+
 function App() {
   return (
     <div className="App">
-      {/* <AllRoutes/> */}
-      <Payment/>
+      <NavBar/>
+      <AllRoutes />
+      <Footer/>
     </div>
   );
 }

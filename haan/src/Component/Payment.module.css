@@ -32,11 +32,15 @@
 margin-top:10px;
 font-size: large;
 padding: 10px 20px 10px 20px;
-background-color: green;
+/* background-color: green; */
 color: white;
 border: none;
 border-radius: 10px;
+background:rgb(27,27,27);
 
+}
+.paymentDiv>div:first-child>form>button:hover{
+    background: linear-gradient(90deg, rgba(27,27,27,1)20%, rgba(0,128,128,1)64%);
 }
 
 .paymentDiv>div:nth-child(2){
@@ -134,8 +138,8 @@ border-radius: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 5px;
+    /* padding-right: 5px; */
     background-color: #2446ea;
     color:white;
     align-items: center;
@@ -159,7 +163,6 @@ border-radius: 10px;
     text-align: center;
     color:white;
     margin-left: 10px;
-
 }
 .paymentPageDiv>div:first-child>button{
     color:white;
@@ -231,8 +234,12 @@ border-radius: 10px;
     border:none;
     border-radius: 7px;
     margin-right: 10px ;
-    
+    background:rgb(27,27,27);
+
 }
+.paymentPageDiv>div:last-child>button:hover{
+    background: linear-gradient(90deg, rgba(27,27,27,1)20%, rgba(0,128,128,1)64%);
+} 
 
 
 /* styliing for the otp page */
@@ -269,8 +276,11 @@ border-radius: 10px;
     font-size: large;
     letter-spacing: 1px;
     margin-top: 20px;
+    background:rgb(27,27,27);
+    margin-bottom: 50px;
+
 }
-.thankyouPage>button:hover{
-    background-color: green;
+.continueShoppingBtn:hover{
+    background: linear-gradient(90deg, rgba(27,27,27,1)20%, rgba(0,128,128,1)64%);
 }
 
