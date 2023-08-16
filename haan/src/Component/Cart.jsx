@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect ,useContext} from 'react';
 import axios from 'axios';
 import styles from './Cart.module.css';
 import gstImg from '../Media/gst.png';
+import { useNavigate } from 'react-router-dom';
+import {AuthContext} from "../Context/AuthContextApi"
 
 const Cart = () => {
+  const navigate=useNavigate();
+  const { authState } = useContext(AuthContext);
   const [productsData, setProductsData] = useState([]);
   const [quantities, setQuantities] = useState({}); // State to manage individual quantities
   const [isOverlayOpen, setIsOverlayOpen] = useState(true); 
@@ -102,7 +106,8 @@ const Cart = () => {
               </div>
               <div className={styles.checkoutDiv}>
                 <h4>Total : {calculateTotal()} Rs.</h4>
-                <button id='checkoutBtn'>Checkout</button>
+
+                <button id='checkoutBtn' onClick={()=>{  navigate(authState.isAuth?"/payment":"/login")}}>Checkout</button>
               </div>
             </div>
           </div>
