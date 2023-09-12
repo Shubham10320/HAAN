@@ -1,6 +1,6 @@
 # HAAN Ecommerce App
 
-Welcome to the HAAN Ecommerce App repository! This app is dedicated to providing high-quality hand sanitizers for our users. It was developed as a part of Masai School's Construct Week project in August, led by Mhd Zaid and his team members - Shubham Dubey and Lokesh Kumar.
+Welcome to the HAAN Ecommerce App repository! This app is dedicated to providing high-quality hand sanitizers for our users. It was developed as a part of Masai School's Construct Week project in August, led by Mohd Zaid and his team members - Shubham Dubey and Lokesh Kumar.
 
 ## Overview
 
